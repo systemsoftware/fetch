@@ -153,7 +153,7 @@ const _fetch = (url, config = httpConfig) => {
  * @param {HttpConfig} [config] Configuration for the request.
  * @returns {Promise<FetchResponse>} A promise that resolves to the response data.
  */
-module.exports.get = (url, config) => fetch(url, {
+module.exports.get = (url, config) => _fetch(url, {
     ...config,
     method: 'GET'
 });
@@ -164,7 +164,7 @@ module.exports.get = (url, config) => fetch(url, {
  * @param {HttpConfig} [config] Configuration for the request.
  * @returns {Promise<FetchResponse>} A promise that resolves to the response data.
  */
-module.exports.post = (url, config) => fetch(url, {
+module.exports.post = (url, config) => _fetch(url, {
     ...config,
     method: 'POST'
 });
@@ -175,7 +175,7 @@ module.exports.post = (url, config) => fetch(url, {
  * @param {HttpConfig} [config] Configuration for the request.
  * @returns {Promise<FetchResponse>} A promise that resolves to the response data.
  */
-module.exports.put = (url, config) => fetch(url, {
+module.exports.put = (url, config) => _fetch(url, {
     ...config,
     method: 'PUT'
 });
@@ -186,7 +186,7 @@ module.exports.put = (url, config) => fetch(url, {
  * @param {HttpConfig} [config] Configuration for the request.
  * @returns {Promise<FetchResponse>} A promise that resolves to the response data.
  */
-module.exports.patch = (url, config) => fetch(url, {
+module.exports.patch = (url, config) => _fetch(url, {
     ...config,
     method: 'PATCH'
 });
@@ -197,7 +197,7 @@ module.exports.patch = (url, config) => fetch(url, {
  * @param {HttpConfig} [config] Configuration for the request.
  * @returns {Promise<FetchResponse>} A promise that resolves to the response data.
  */
-module.exports.delete = (url, config) => fetch(url, {
+module.exports.delete = (url, config) => _fetch(url, {
     ...config,
     method: 'DELETE'
 });
@@ -208,9 +208,9 @@ module.exports.delete = (url, config) => fetch(url, {
  * @param {HttpConfig} [config] Configuration for the request.
  * @returns {Promise<FetchResponse>} A promise that resolves to the response data.
  */
-module.exports.head = (url, config) => fetch(url, {
+module.exports.head = (url, config) => _fetch(url, {
     ...config,
     method: 'HEAD'
 });
 
-module.exports.fetch = fetch;
+module.exports.fetch = _fetch;
